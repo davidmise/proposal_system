@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Check - SmartManager ERP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .health-check {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        .status {
+            color: #22c55e;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 14px;
+        }
+        .info {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="health-check">
+        <div class="status">✅ System Healthy</div>
+        <h2>SmartManager ERP Proposals</h2>
+        <div class="info">
+            <strong>Available Endpoints:</strong><br>
+            • <a href="/">Landing Page</a><br>
+            • <a href="/proposal-v1">SaaS Partnership</a><br>
+            • <a href="/proposal-v2">Enterprise Solution</a><br>
+            • <a href="/home">Alternative Home</a>
+        </div>
+        <div class="timestamp">
+            Checked: <span id="timestamp"></span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>

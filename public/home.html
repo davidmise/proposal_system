@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamoja INC - Proposal Selection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .proposal-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: perspective(1000px) rotateY(0deg);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .proposal-card:hover {
+            transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.95));
+        }
+        
+        .proposal-card .icon-container {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+        
+        .proposal-card:hover .icon-container {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Toast styles */
+        #fullscreenToast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        #fullscreenToast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle" style="left: 10%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; width: 6px; height: 6px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; width: 3px; height: 3px; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; width: 5px; height: 5px; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; width: 4px; height: 4px; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; width: 6px; height: 6px; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; width: 3px; height: 3px; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; width: 5px; height: 5px; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; width: 4px; height: 4px; animation-delay: 16s;"></div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="glass-effect rounded-3xl p-8 max-w-6xl w-full relative z-10">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <div class="flex items-center justify-center mb-6">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-lg flex items-center justify-center mr-4">
+                    <i class="fas fa-building text-white text-2xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-white font-['Poppins']">Pamoja INC</h1>
+            </div>
+            <p class="text-xl text-white/90 font-light mb-2">SmartManager ERP Business Models for Kings Super Brand</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-white/50 to-white/20 rounded mx-auto"></div>
+        </div>
+        
+        <!-- Proposal Cards Container -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- SaaS Reseller Package Card -->
+            <div class="proposal-card rounded-2xl p-8 text-center relative overflow-hidden">
+                <div class="absolute top-4 right-4">
+                    <span class="feature-badge px-3 py-1 rounded-full text-sm font-medium text-purple-700">SaaS Package</span>
+                </div>
+                
+                <div class="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold gradient-text mb-4 font-['Poppins']">SaaS Reseller Solution</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Complete SmartManager SaaS platform that Kings Super Brand can rebrand and resell 
+                    to other businesses. Build your own revenue stream with subscription-based ERP 
+                    solutions while we handle development, hosting, and maintenance.
+                </p>
+                
+                <!-- Features List -->
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-green-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">White-label SaaS platform</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-green-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">Revenue sharing model</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-green-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">Multi-tenant architecture</span>
+                    </div>
+                </div>
+                
+                <a href="proposal_template_v1.html" class="btn-primary text-white px-8 py-3 rounded-xl font-medium inline-flex items-center space-x-2 relative">
+                    <span>View SaaS Package</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Standalone Enterprise Package Card -->
+            <div class="proposal-card rounded-2xl p-8 text-center relative overflow-hidden">
+                <div class="absolute top-4 right-4">
+                    <span class="feature-badge px-3 py-1 rounded-full text-sm font-medium text-purple-700">Enterprise Package</span>
+                </div>
+                
+                <div class="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl">
+                    <i class="fas fa-server"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold gradient-text mb-4 font-['Poppins']">Standalone Enterprise System</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Custom-built SmartManager ERP exclusively for Kings Super Brand's internal operations. 
+                    Complete ownership with on-premise deployment, full customization, and dedicated 
+                    support for your specific business processes.
+                </p>
+                
+                <!-- Features List -->
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">Exclusive ownership</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">On-premise deployment</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulse-dot mr-3"></div>
+                        <span class="text-sm text-gray-600">Full customization</span>
+                    </div>
+                </div>
+                
+                <a href="proposal_template_v2.html" class="btn-primary text-white px-8 py-3 rounded-xl font-medium inline-flex items-center space-x-2 relative">
+                    <span>View Enterprise Package</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <div class="text-center mt-12 pt-8 border-t border-white/20">
+            <p class="text-white/70 text-sm">
+                <i class="fas fa-shield-alt mr-2"></i>
+                Both packages offer complete SmartManager ERP capabilities - choose the business model that fits your strategy
+            </p>
+        </div>
+    </div>
+    
+    <!-- Fullscreen Recommendation Toast -->
+    <div id="fullscreenToast" class="fixed top-6 right-6 z-50">
+        <div class="bg-white/95 backdrop-blur-lg rounded-xl shadow-2xl p-4 max-w-sm border border-white/30">
+            <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-sm"></i>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-sm font-semibold text-gray-800 mb-1">Enhanced Experience</h4>
+                    <p class="text-xs text-gray-600 mb-3">Press <kbd class="px-2 py-1 bg-gray-100 rounded text-xs font-mono">F11</kbd> for fullscreen mode to get the most out of this interactive proposal experience.</p>
+                    <div class="flex space-x-2">
+                        <button onclick="enterFullscreen()" class="text-xs bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-lg hover:shadow-lg transition-all duration-200">
+                            Go Fullscreen
+                        </button>
+                        <button onclick="dismissToast()" class="text-xs text-gray-500 hover:text-gray-700 px-2 py-1">
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+                <button onclick="dismissToast()" class="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fullscreen Toast Functions
+        function enterFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+                document.documentElement.msRequestFullscreen();
+            }
+            dismissToast();
+        }
+        
+        function dismissToast() {
+            const toast = document.getElementById('fullscreenToast');
+            toast.classList.remove('show');
+            localStorage.setItem('fullscreenToastDismissed', 'true');
+        }
+        
+        function showToast() {
+            const toast = document.getElementById('fullscreenToast');
+            const isDismissed = localStorage.getItem('fullscreenToastDismissed');
+            
+            if (!isDismissed && !document.fullscreenElement) {
+                // Show after a brief delay to ensure DOM is ready
+                setTimeout(() => {
+                    toast.classList.add('show');
+                    
+                    // Auto-dismiss after 8 seconds if not interacted with
+                    setTimeout(() => {
+                        if (toast.classList.contains('show')) {
+                            dismissToast();
+                        }
+                    }, 8000);
+                }, 500);
+            }
+        }
+
+        // Add smooth entrance animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.glass-effect');
+            container.style.opacity = '0';
+            container.style.transform = 'scale(0.9) translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                container.style.opacity = '1';
+                container.style.transform = 'scale(1) translateY(0)';
+            }, 100);
+            
+            // Add staggered animation to cards
+            const cards = document.querySelectorAll('.proposal-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+            
+            // Show the toast after all animations are complete
+            setTimeout(showToast, 1000);
+        });
+        
+        // Add subtle parallax effect to particles
+        document.addEventListener('mousemove', function(e) {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.5;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                particle.style.transform += ` translate(${x}px, ${y}px)`;
+            });
+        });
+        
+        // Listen for fullscreen changes to hide/show toast appropriately
+        document.addEventListener('fullscreenchange', function() {
+            if (document.fullscreenElement) {
+                dismissToast();
+            }
+        });
+        
+        // Keyboard shortcut listener for F11
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F11') {
+                e.preventDefault();
+                enterFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>

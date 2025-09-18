@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta name="description" content="SmartManager ERP SaaS - Complete business management solution for spirits manufacturing, pharmaceuticals, hotels, construction, and multi-industry deployment">
     
-    <!-- Security Headers for mobile iframe compatibility -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; frame-src 'self' https:; object-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;">
+    <!-- Security Headers optimized for mobile -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Referrer-Policy" content="same-origin">
     
     <title>SmartManager ERP SaaS - Complete Business Solution Proposal</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -71,16 +71,16 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            transform: translateY(-100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
             transition: transform 0.3s ease;
         }
 
-        .nav-sticky.show {
-            transform: translateY(0);
+        .nav-sticky.hide {
+            transform: translateY(-100%);
         }
 
         .nav-link {
@@ -707,20 +707,57 @@
     <nav class="nav-sticky" id="stickyNav">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="font-poppins font-bold text-xl text-gray-800">SmartManager ERP</div>
+                <div class="flex items-center space-x-4">
+                    <div class="font-poppins font-bold text-xl text-gray-800">SmartManager  <span class="bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">SaaS </span></div></div>
+                    <a href="home.html" class="inline-flex items-center px-3 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-sm rounded-lg hover:shadow-lg transition-all duration-200">
+                        <i class="fas fa-home mr-2"></i>
+                        <!-- <span class="hidden sm:inline">Back to Home</span> -->
+                        <span class="sm:hidden">Home</span>
+                    </a>
+                </div>
                 
-                <!-- Desktop Navigation -->
+                <!-- Desktop & Mobile Navigation -->
                 <div class="hidden md:flex space-x-4">
-                    <a href="#executive-summary" class="nav-link text-gray-700 hover:text-blue-600">Executive Summary</a>
-                    <a href="#project-overview" class="nav-link text-gray-700 hover:text-blue-600">Project Overview</a>
-                    <a href="#modules" class="nav-link text-gray-700 hover:text-blue-600">Modules</a>
-                    <a href="#timeline" class="nav-link text-gray-700 hover:text-blue-600">Timeline</a>
-                    <a href="#responsibility" class="nav-link text-gray-700 hover:text-blue-600">Responsibilities</a>
-                    <a href="#pricing" class="nav-link text-gray-700 hover:text-blue-600">Pricing</a>
-                    <a href="#kpis" class="nav-link text-gray-700 hover:text-blue-600">KPIs</a>
-                    <a href="#deliverables" class="nav-link text-gray-700 hover:text-blue-600">Deliverables</a>
-                    <a href="#support" class="nav-link text-gray-700 hover:text-blue-600">Support</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Summary</span>
+                        <span class="lg:hidden">Summary</span>
+                    </a>
+                    <a href="#overview" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Overview</span>
+                        <span class="lg:hidden">Overview</span>
+                    </a>
+                    <a href="#modules" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Modules</span>
+                        <span class="lg:hidden">Modules</span>
+                    </a>
+                    <a href="#timeline" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Timeline</span>
+                        <span class="lg:hidden">Timeline</span>
+                    </a>
+                    <a href="#responsibility" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Responsibilities</span>
+                        <span class="lg:hidden">Resp.</span>
+                    </a>
+                    <a href="#pricing" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Pricing</span>
+                        <span class="lg:hidden">Pricing</span>
+                    </a>
+                    <a href="#kpis" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">KPIs</span>
+                        <span class="lg:hidden">KPIs</span>
+                    </a>
+                    <a href="#deliverables" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Deliverables</span>
+                        <span class="lg:hidden">Deliv.</span>
+                    </a>
+                    <a href="#support" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Support</span>
+                        <span class="lg:hidden">Support</span>
+                    </a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">
+                        <span class="hidden lg:inline">Contact</span>
+                        <span class="lg:hidden">Contact</span>
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -740,8 +777,11 @@
                     </button>
                 </div>
                 <div class="space-y-4">
-                    <a href="#executive-summary" class="block py-2 text-gray-700 hover:text-blue-600">Executive Summary</a>
-                    <a href="#project-overview" class="block py-2 text-gray-700 hover:text-blue-600">Project Overview</a>
+                    <a href="home.html" class="block py-2 text-blue-600 font-medium border-b border-gray-200">
+                        <i class="fas fa-home mr-2"></i>Back to Home
+                    </a>
+                    <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Executive Summary</a>
+                    <a href="#overview" class="block py-2 text-gray-700 hover:text-blue-600">Project Overview</a>
                     <a href="#modules" class="block py-2 text-gray-700 hover:text-blue-600">Modules</a>
                     <a href="#timeline" class="block py-2 text-gray-700 hover:text-blue-600">Timeline</a>
                     <a href="#responsibility" class="block py-2 text-gray-700 hover:text-blue-600">Responsibilities</a>
@@ -751,12 +791,15 @@
                     <a href="#support" class="block py-2 text-gray-700 hover:text-blue-600">Support</a>
                     <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
                 </div>
+                    <a href="#support" class="block py-2 text-gray-700 hover:text-blue-600">Support</a>
+                    <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section / Executive Summary -->
-    <header id="executive-summary" class="relative gradient-primary text-white overflow-hidden min-h-screen flex items-center">
+    <header id="home" class="relative gradient-primary text-white overflow-hidden min-h-screen flex items-center">
         <div class="hero-decoration hero-decoration-1">
             <i class="fas fa-cogs"></i>
         </div>
@@ -773,7 +816,7 @@
                     SmartManager ERP <span class="bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">SaaS Platform</span>
                 </h1>
                 <p class="text-xl md:text-2xl font-light mb-8 opacity-90 max-w-4xl mx-auto leading-relaxed">
-                    Comprehensive business management solution tailored for your multi-industry operations. 3-month development timeline with TZS 15M investment.
+                    Comprehensive business management solution tailored for your multi-industry operations. 3-month development timeline with TZS 20M investment.
                 </p>
                 
                 <!-- Key Stats -->
@@ -824,7 +867,7 @@
 
     <main>
         <!-- Project Overview Section -->
-        <section id="project-overview" class="py-20 bg-white">
+        <section id="overview" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-7xl mx-auto">
                     <div class="text-center mb-16" data-aos="fade-up">
@@ -1296,14 +1339,16 @@
                     <!-- Tab Content -->
                     <!-- Development Package Tab -->
                     <div class="tab-content active" id="development-content">
+                        <!-- Option 1: Standard SaaS Package -->
                         <div class="glassmorphism-card p-12 mb-8" data-aos="fade-up" data-aos-delay="200">
                             <div class="text-center mb-12">
                                 <div class="tech-icon">
                                     <i class="fas fa-laptop-code text-white text-2xl"></i>
                                 </div>
-                                <h3 class="font-poppins text-4xl font-bold text-white mb-4">Complete ERP Development</h3>
-                                <div class="text-6xl font-bold text-white mb-4">TZS 15,000,000/=</div>
-                                <div class="text-xl text-white/80">Negotiable Development Fee</div>
+                                <h3 class="font-poppins text-4xl font-bold text-white mb-4">Complete ERP Development - Standard</h3>
+                                <div class="text-6xl font-bold text-white mb-4">TZS 20,000,000/=</div>
+                                <div class="text-xl text-white/80">20% Revenue Share Per Client</div>
+                                <div class="text-lg text-white/70 mt-2">Monthly Maintenance: TZS 700,000</div>
                             </div>
                             
                             <div class="grid md:grid-cols-3 gap-8">
@@ -1324,6 +1369,27 @@
                                         </li>
                                         <li class="benefit-item text-white/90">
                                             <i class="fas fa-check text-green-400 mr-3"></i>Multi-tenant architecture
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 backdrop-filter backdrop-blur-lg rounded-xl p-6">
+                                    <h4 class="font-bold text-lg mb-4 text-dark">Revenue Sharing</h4>
+                                    <ul class="benefit-list">
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-percent text-blue-400 mr-3"></i>You receive 80% of client payments
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-percent text-green-400 mr-3"></i>Pamoja takes 20% service fee
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-chart-line text-purple-400 mr-3"></i>Transparent revenue tracking
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-money-bill text-yellow-400 mr-3"></i>Monthly payment cycles
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-handshake text-blue-400 mr-3"></i>Long-term partnership model
                                         </li>
                                     </ul>
                                 </div>
@@ -1366,6 +1432,85 @@
                                         </li>
                                         <li class="benefit-item text-white/90">
                                             <i class="fas fa-check text-green-400 mr-3"></i>Revenue sharing options
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Option 2: Premium SaaS Package -->
+                        <div class="glassmorphism-card p-12 mb-8" data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-center mb-12">
+                                <div class="tech-icon bg-gradient-to-r from-purple-500 to-pink-600">
+                                    <i class="fas fa-crown text-white text-2xl"></i>
+                                </div>
+                                <h3 class="font-poppins text-4xl font-bold text-white mb-4">Complete ERP Development - Premium</h3>
+                                <div class="text-6xl font-bold text-white mb-4">TZS 30,000,000/=</div>
+                                <div class="text-xl text-white/80">15% Revenue Share Per Client</div>
+                                <div class="text-lg text-white/70 mt-2">Monthly Maintenance: TZS 700,000</div>
+                                <div class="bg-yellow-500 text-black px-4 py-2 rounded-full mt-4 inline-block font-bold">⭐ RECOMMENDED PACKAGE</div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="bg-gray-50 backdrop-filter backdrop-blur-lg rounded-xl p-6">
+                                    <h4 class="font-bold text-lg mb-4 text-dark">Enhanced Deliverables</h4>
+                                    <ul class="benefit-list">
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Complete 12-module ERP system
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Premium UI/UX design
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Advanced analytics dashboard
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Mobile app included
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>API integrations ready
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 backdrop-filter backdrop-blur-lg rounded-xl p-6">
+                                    <h4 class="font-bold text-lg mb-4 text-dark">Premium Revenue Model</h4>
+                                    <ul class="benefit-list">
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-trophy text-gold-400 mr-3"></i>You receive 85% of client payments
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-percent text-green-400 mr-3"></i>Only 15% service fee to Pamoja
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-chart-bar text-purple-400 mr-3"></i>Advanced revenue analytics
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-coins text-yellow-400 mr-3"></i>Higher profit margins
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-star text-blue-400 mr-3"></i>Priority partnership benefits
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 backdrop-filter backdrop-blur-lg rounded-xl p-6">
+                                    <h4 class="font-bold text-lg mb-4 text-dark">Premium Support</h4>
+                                    <ul class="benefit-list">
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>12 months premium support
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Priority technical assistance
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Dedicated account manager
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Custom feature development
+                                        </li>
+                                        <li class="benefit-item text-white/90">
+                                            <i class="fas fa-check text-green-400 mr-3"></i>Marketing support included
                                         </li>
                                     </ul>
                                 </div>
@@ -1465,20 +1610,21 @@
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-8">
-                                <!-- Standard Partnership -->
+                                <!-- Standard Partnership - 20% -->
                                 <div class="revenue-share-card p-8">
                                     <div class="text-center mb-6">
                                         <div class="tech-icon">
                                             <i class="fas fa-handshake text-white text-xl"></i>
                                         </div>
                                         <h4 class="font-poppins text-2xl font-bold text-gray-800 mb-2">Standard Partnership</h4>
-                                        <div class="split-indicator">85/15 Split</div>
-                                        <div class="text-gray-600">Kings Super Brand keeps 85%</div>
+                                        <div class="split-indicator">80/20 Split</div>
+                                        <div class="text-gray-600">Development Cost: TZS 20,000,000</div>
+                                        <div class="text-gray-600">Kings Super Brand keeps 80%</div>
                                     </div>
                                     
                                     <div class="space-y-4">
                                         <div class="bg-gray-50 rounded-lg p-4">
-                                            <h5 class="font-semibold mb-3 text-gray-800">Your Benefits (85%)</h5>
+                                            <h5 class="font-semibold mb-3 text-gray-800">Your Benefits (80%)</h5>
                                             <ul class="benefit-list">
                                                 <li class="benefit-item text-gray-700">
                                                     <i class="fas fa-check text-green-500 mr-3"></i>Direct customer relationships
@@ -1490,13 +1636,13 @@
                                                     <i class="fas fa-check text-green-500 mr-3"></i>Complete brand ownership
                                                 </li>
                                                 <li class="benefit-item text-gray-700">
-                                                    <i class="fas fa-check text-green-500 mr-3"></i>Marketing autonomy
+                                                    <i class="fas fa-check text-green-500 mr-3"></i>Standard support included
                                                 </li>
                                             </ul>
                                         </div>
                                         
                                         <div class="bg-gray-50 rounded-lg p-4">
-                                            <h5 class="font-semibold mb-3 text-gray-800">Pamoja Inc Services (15%)</h5>
+                                            <h5 class="font-semibold mb-3 text-gray-800">Pamoja Inc Services (20%)</h5>
                                             <ul class="benefit-list">
                                                 <li class="benefit-item text-gray-700">
                                                     <i class="fas fa-cog text-blue-500 mr-3"></i>Technical support
@@ -1518,35 +1664,37 @@
                                 <!-- Premium Partnership -->
                                 <div class="revenue-share-card p-8">
                                     <div class="text-center mb-6">
-                                        <div class="tech-icon">
-                                            <i class="fas fa-star text-white text-xl"></i>
+                                        <div class="tech-icon bg-gradient-to-r from-purple-500 to-pink-600">
+                                            <i class="fas fa-crown text-white text-xl"></i>
                                         </div>
                                         <h4 class="font-poppins text-2xl font-bold text-gray-800 mb-2">Premium Partnership</h4>
-                                        <div class="split-indicator">80/20 Split</div>
-                                        <div class="text-gray-600">Kings Super Brand keeps 80%</div>
+                                        <div class="split-indicator bg-gradient-to-r from-purple-500 to-pink-600">85/15 Split</div>
+                                        <div class="text-gray-600">Development Cost: TZS 30,000,000</div>
+                                        <div class="text-gray-600">Kings Super Brand keeps 85%</div>
+                                        <div class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold mt-2">⭐ RECOMMENDED</div>
                                     </div>
                                     
                                     <div class="space-y-4">
                                         <div class="bg-gray-50 rounded-lg p-4">
-                                            <h5 class="font-semibold mb-3 text-gray-800">Your Benefits (80%)</h5>
+                                            <h5 class="font-semibold mb-3 text-gray-800">Your Benefits (85%)</h5>
                                             <ul class="benefit-list">
                                                 <li class="benefit-item text-gray-700">
-                                                    <i class="fas fa-check text-green-500 mr-3"></i>Full system ownership
+                                                    <i class="fas fa-check text-green-500 mr-3"></i>Higher profit margins
                                                 </li>
                                                 <li class="benefit-item text-gray-700">
-                                                    <i class="fas fa-check text-green-500 mr-3"></i>Complete customization rights
+                                                    <i class="fas fa-check text-green-500 mr-3"></i>Premium support included
                                                 </li>
                                                 <li class="benefit-item text-gray-700">
-                                                    <i class="fas fa-check text-green-500 mr-3"></i>Independent operations
+                                                    <i class="fas fa-check text-green-500 mr-3"></i>Priority feature development
                                                 </li>
                                                 <li class="benefit-item text-gray-700">
-                                                    <i class="fas fa-check text-green-500 mr-3"></i>Revenue majority control
+                                                    <i class="fas fa-check text-green-500 mr-3"></i>Dedicated account manager
                                                 </li>
                                             </ul>
                                         </div>
                                         
                                         <div class="bg-gray-50 rounded-lg p-4">
-                                            <h5 class="font-semibold mb-3 text-gray-800">Pamoja Inc Services (20%)</h5>
+                                            <h5 class="font-semibold mb-3 text-gray-800">Pamoja Inc Services (15%)</h5>
                                             <ul class="benefit-list">
                                                 <li class="benefit-item text-gray-700">
                                                     <i class="fas fa-rocket text-purple-500 mr-3"></i>Ongoing development
@@ -1962,7 +2110,7 @@
         </section>
 
         <!-- Technology Stack -->
-        <section class="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
+        <section id="responsibility" class="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="font-poppins text-4xl md:text-5xl font-bold text-gray-800 mb-4">Modern Technology Stack</h2>
@@ -2019,7 +2167,7 @@
         </section>
 
         <!-- Comparison Table -->
-        <section class="py-20 bg-white">
+        <section id="kpis" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="font-poppins text-4xl md:text-5xl font-bold text-gray-800 mb-4">SmartManager vs Traditional Solutions</h2>
@@ -2120,7 +2268,7 @@
         </section>
 
         <!-- Investment Section -->
-        <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <section id="deliverables" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="font-poppins text-4xl md:text-5xl font-bold text-gray-800 mb-4">Investment Overview</h2>
@@ -2128,24 +2276,39 @@
                     <p class="text-xl text-gray-600 max-w-4xl mx-auto">Flexible pricing with profitable revenue sharing model</p>
                 </div>
                 
-                <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-4 lg:gap-8 mb-16 px-4">
-                    <!-- Development Investment -->
-                    <div class="animated-card bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-gray-200">
-                        <div class="text-center mb-6 lg:mb-8">
+                <!-- Two Pricing Options -->
+                <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 mb-16 px-4">
+                    <!-- Standard Partnership Option -->
+                    <div class="animated-card bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border-2 border-blue-200 relative">
+                        <div class="absolute -top-3 lg:-top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-blue-500 text-white font-bold py-1 px-3 sm:py-2 sm:px-4 lg:px-6 rounded-full uppercase text-xs sm:text-sm tracking-wider shadow-lg">
+                                Standard Partnership
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6 lg:mb-8 mt-4">
                             <div class="inline-block bg-blue-100 text-blue-800 font-semibold px-3 py-2 rounded-full text-xs sm:text-sm uppercase tracking-wider mb-4">
                                 Development Investment
                             </div>
                             <div class="flex items-baseline justify-center mb-4">
-                                <span class="metric-counter text-3xl sm:text-4xl lg:text-6xl font-black">15,000,000</span>
+                                <span class="metric-counter text-3xl sm:text-4xl lg:text-6xl font-black text-blue-600">20,000,000</span>
                                 <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-500 ml-1 sm:ml-2">TZS</span>
                             </div>
-                            <div class="w-16 lg:w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full"></div>
+                            <div class="w-16 lg:w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full mb-4"></div>
+                            
+                            <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                                <div class="flex items-baseline justify-center">
+                                    <span class="text-2xl sm:text-3xl lg:text-4xl font-black text-blue-600">20</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-500 ml-1 sm:ml-2">% per client</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">You keep 80% of revenue</p>
+                            </div>
                         </div>
                         
                         <div class="space-y-3 lg:space-y-4 mb-6 lg:mb-8">
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg">
                                 <i class="fas fa-check-circle text-blue-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Complete ERP development from scratch</span>
+                                <span class="text-gray-700 text-sm sm:text-base">Complete ERP development</span>
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg">
                                 <i class="fas fa-check-circle text-blue-600 text-sm sm:text-base"></i>
@@ -2153,54 +2316,65 @@
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg">
                                 <i class="fas fa-check-circle text-blue-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Industry-specific customizations</span>
+                                <span class="text-gray-700 text-sm sm:text-base">Monthly maintenance: 700,000 TZS</span>
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg">
                                 <i class="fas fa-check-circle text-blue-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Complete branding package</span>
+                                <span class="text-gray-700 text-sm sm:text-base">4 payment phases</span>
                             </div>
                         </div>
                         
-                        <div class="text-center">
-                            <p class="text-xs sm:text-sm text-gray-500">Payable across 4 development phases</p>
+                        <div class="text-center bg-gradient-to-r from-blue-400 to-blue-500 text-white p-3 sm:p-4 rounded-lg">
+                            <p class="font-semibold text-sm sm:text-base">
+                                <i class="fas fa-calculator mr-2"></i>
+                                Potential: 10 clients = 6,400,000 TZS/month revenue!
+                            </p>
                         </div>
                     </div>
                     
-                    <!-- Revenue Sharing Model -->
-                    <div class="animated-card bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border-4 border-green-400 relative">
+                    <!-- Premium Partnership Option - RECOMMENDED -->
+                    <div class="animated-card bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border-4 border-green-400 relative transform scale-105">
                         <div class="absolute -top-3 lg:-top-4 left-1/2 transform -translate-x-1/2">
                             <span class="bg-green-500 text-white font-bold py-1 px-3 sm:py-2 sm:px-4 lg:px-6 rounded-full uppercase text-xs sm:text-sm tracking-wider shadow-lg pulse-animation">
-                                <i class="fas fa-star mr-1"></i> Profitable Model
+                                <i class="fas fa-star mr-1"></i> Premium Partnership - RECOMMENDED
                             </span>
                         </div>
                         
                         <div class="text-center mb-6 lg:mb-8 mt-4">
                             <div class="inline-block bg-green-100 text-green-800 font-semibold px-3 py-2 rounded-full text-xs sm:text-sm uppercase tracking-wider mb-4">
-                                Revenue Sharing
+                                Development Investment
                             </div>
                             <div class="flex items-baseline justify-center mb-4">
-                                <span class="text-3xl sm:text-3xl lg:text-4xl font-black text-green-600">20</span>
-                                <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-500 ml-1 sm:ml-2">% per client</span>
+                                <span class="metric-counter text-3xl sm:text-4xl lg:text-6xl font-black text-green-600">30,000,000</span>
+                                <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-500 ml-1 sm:ml-2">TZS</span>
                             </div>
-                            <div class="w-16 lg:w-20 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
+                            <div class="w-16 lg:w-20 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full mb-4"></div>
+                            
+                            <div class="bg-green-50 rounded-lg p-3 mb-4">
+                                <div class="flex items-baseline justify-center">
+                                    <span class="text-2xl sm:text-3xl lg:text-4xl font-black text-green-600">15</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-500 ml-1 sm:ml-2">% per client</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">You keep 85% of revenue</p>
+                            </div>
                         </div>
                         
                         <div class="space-y-3 lg:space-y-4 mb-6 lg:mb-8">
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg">
                                 <i class="fas fa-check-circle text-green-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Basic Plan: 250,000 TZS/month</span>
+                                <span class="text-gray-700 text-sm sm:text-base">Complete ERP development</span>
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg">
                                 <i class="fas fa-check-circle text-green-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Standard Plan: 500,000 TZS/month</span>
+                                <span class="text-gray-700 text-sm sm:text-base">All 12 modules + Premium features</span>
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg">
                                 <i class="fas fa-check-circle text-green-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">Premium Plan: 800,000 TZS/month</span>
+                                <span class="text-gray-700 text-sm sm:text-base">Monthly maintenance: 700,000 TZS</span>
                             </div>
                             <div class="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg">
                                 <i class="fas fa-check-circle text-green-600 text-sm sm:text-base"></i>
-                                <span class="text-gray-700 text-sm sm:text-base">85% revenue retained by you</span>
+                                <span class="text-gray-700 text-sm sm:text-base">Higher profit margins</span>
                             </div>
                         </div>
                         
@@ -2209,6 +2383,128 @@
                                 <i class="fas fa-calculator mr-2"></i>
                                 Potential: 10 clients = 6,800,000 TZS/month revenue!
                             </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partnership Comparison -->
+                <div class="max-w-7xl mx-auto mb-16">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                        <h3 class="font-poppins text-2xl font-bold text-center mb-8 text-gray-800">Partnership Options Comparison</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Standard Partnership -->
+                            <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
+                                <div class="text-center mb-6">
+                                    <h4 class="font-bold text-xl text-blue-800 mb-2">Standard Partnership</h4>
+                                    <div class="text-3xl font-black text-blue-600 mb-2">TZS 20,000,000</div>
+                                    <div class="text-lg font-semibold text-blue-700">20% per client</div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Development Investment:</span>
+                                        <span class="font-semibold text-blue-600">TZS 20,000,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Revenue Share:</span>
+                                        <span class="font-semibold text-blue-600">20% to us, 80% to you</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Monthly Maintenance:</span>
+                                        <span class="font-semibold text-blue-600">TZS 700,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Payment Phases:</span>
+                                        <span class="font-semibold text-blue-600">4 phases (5M each)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 p-4 bg-blue-100 rounded-lg">
+                                    <h5 class="font-semibold text-blue-800 mb-2">Revenue Example (10 clients):</h5>
+                                    <div class="text-sm space-y-1">
+                                        <div>Basic (250K): 2,000,000 TZS/month</div>
+                                        <div>Standard (500K): 4,000,000 TZS/month</div>
+                                        <div>Premium (800K): 6,400,000 TZS/month</div>
+                                        <div class="font-bold text-blue-800 border-t border-blue-200 pt-2 mt-2">
+                                            Your Share: 5,120,000 TZS/month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Premium Partnership - RECOMMENDED -->
+                            <div class="bg-green-50 rounded-xl p-6 border-4 border-green-400 relative">
+                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                    <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-sm">
+                                        <i class="fas fa-star mr-1"></i>RECOMMENDED
+                                    </span>
+                                </div>
+                                
+                                <div class="text-center mb-6 mt-4">
+                                    <h4 class="font-bold text-xl text-green-800 mb-2">Premium Partnership</h4>
+                                    <div class="text-3xl font-black text-green-600 mb-2">TZS 30,000,000</div>
+                                    <div class="text-lg font-semibold text-green-700">15% per client</div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Development Investment:</span>
+                                        <span class="font-semibold text-green-600">TZS 30,000,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Revenue Share:</span>
+                                        <span class="font-semibold text-green-600">15% to us, 85% to you</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Monthly Maintenance:</span>
+                                        <span class="font-semibold text-green-600">TZS 700,000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                                        <span class="text-gray-700">Payment Phases:</span>
+                                        <span class="font-semibold text-green-600">4 phases (7.5M each)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 p-4 bg-green-100 rounded-lg">
+                                    <h5 class="font-semibold text-green-800 mb-2">Revenue Example (10 clients):</h5>
+                                    <div class="text-sm space-y-1">
+                                        <div>Basic (250K): 2,000,000 TZS/month</div>
+                                        <div>Standard (500K): 4,000,000 TZS/month</div>
+                                        <div>Premium (800K): 6,400,000 TZS/month</div>
+                                        <div class="font-bold text-green-800 border-t border-green-200 pt-2 mt-2">
+                                            Your Share: 5,440,000 TZS/month
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 p-3 bg-gradient-to-r from-green-400 to-blue-400 text-white rounded-lg text-center">
+                                    <p class="font-semibold text-sm">
+                                        <i class="fas fa-trophy mr-2"></i>
+                                        320,000 TZS MORE per month with 10 clients!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 text-center">
+                            <div class="bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-xl p-6">
+                                <h4 class="font-bold text-xl mb-4">Why Choose the Premium Partnership?</h4>
+                                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-percentage text-yellow-300"></i>
+                                        <span>Higher profit margins (85% vs 80%)</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-chart-line text-yellow-300"></i>
+                                        <span>Better long-term revenue potential</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-handshake text-yellow-300"></i>
+                                        <span>Exclusive premium partnership status</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2288,144 +2584,158 @@
                         </div>
                     </div>
 
-                    <!-- Service Packages -->
+                    <!-- Annual Support & Maintenance Package -->
                     <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
-                        <h3 class="font-poppins text-2xl font-bold text-center mb-8 text-gray-800">Annual Service Packages</h3>
+                        <h3 class="font-poppins text-2xl font-bold text-center mb-8 text-gray-800">Annual Support & Maintenance Package</h3>
                         
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <!-- Standard Package -->
-                            <div class="bg-white rounded-xl p-6 border-2 border-blue-200 relative">
-                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                    <span class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm">STANDARD</span>
-                                </div>
-                                <div class="text-center mt-4 mb-6">
-                                    <div class="text-3xl font-bold text-blue-600 mb-2">TZS 3,600,000</div>
-                                    <div class="text-gray-600">per year</div>
+                        <div class="max-w-5xl mx-auto">
+                            <!-- Payment Options -->
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <!-- Monthly Payment -->
+                                <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200 relative">
+                                    <div class="text-center mb-6">
+                                        <h4 class="font-bold text-xl text-blue-800 mb-2">Monthly Payment</h4>
+                                        <div class="text-3xl font-black text-blue-600 mb-2">TZS 700,000</div>
+                                        <div class="text-lg text-blue-700">per month</div>
+                                        <div class="text-sm text-gray-600 mt-2">Total Annual: TZS 8,400,000</div>
+                                    </div>
                                 </div>
                                 
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">VPS Hosting (Basic)</span>
+                                <!-- Annual Payment - RECOMMENDED -->
+                                <div class="bg-green-50 rounded-xl p-6 border-4 border-green-400 relative">
+                                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                        <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-sm">
+                                            <i class="fas fa-star mr-1"></i>RECOMMENDED
+                                        </span>
                                     </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Domain Registration</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Monthly Maintenance</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Email Support</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Security Updates</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-times text-gray-400 mr-3"></i>
-                                        <span class="text-sm text-gray-400">Priority Support</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-times text-gray-400 mr-3"></i>
-                                        <span class="text-sm text-gray-400">Custom Features</span>
+                                    
+                                    <div class="text-center mb-6 mt-4">
+                                        <h4 class="font-bold text-xl text-green-800 mb-2">Annual Payment</h4>
+                                        <div class="text-3xl font-black text-green-600 mb-2">TZS 8,000,000</div>
+                                        <div class="text-lg text-green-700">paid at once</div>
+                                        <div class="text-sm text-red-600 font-semibold mt-2">Save TZS 400,000!</div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Premium Package -->
-                            <div class="bg-white rounded-xl p-6 border-4 border-green-400 relative transform scale-105">
-                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                    <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-sm">
-                                        <i class="fas fa-star mr-1"></i>PREMIUM
-                                    </span>
-                                </div>
-                                <div class="text-center mt-4 mb-6">
-                                    <div class="text-3xl font-bold text-green-600 mb-2">TZS 7,200,000</div>
-                                    <div class="text-gray-600">per year</div>
+                            
+                            <!-- What Your 700,000 TZS Monthly Covers -->
+                            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 mb-8">
+                                <h4 class="font-bold text-2xl text-center mb-8 text-gray-800">What Your TZS 700,000/Month Covers</h4>
+                                
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <!-- Infrastructure & Hosting -->
+                                    <div class="space-y-4">
+                                        <h5 class="font-bold text-lg text-blue-800 mb-4 flex items-center">
+                                            <i class="fas fa-server mr-2"></i>
+                                            Infrastructure & Hosting
+                                        </h5>
+                                        
+                                        <div class="space-y-3">
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">Premium VPS Hosting:</span>
+                                                <span class="font-semibold text-blue-600">TZS 150,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">Domain & SSL Certificates:</span>
+                                                <span class="font-semibold text-blue-600">TZS 25,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">Database Management:</span>
+                                                <span class="font-semibold text-blue-600">TZS 75,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">CDN & Performance:</span>
+                                                <span class="font-semibold text-blue-600">TZS 50,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Support & Maintenance -->
+                                    <div class="space-y-4">
+                                        <h5 class="font-bold text-lg text-green-800 mb-4 flex items-center">
+                                            <i class="fas fa-tools mr-2"></i>
+                                            Support & Maintenance
+                                        </h5>
+                                        
+                                        <div class="space-y-3">
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">24/7 Technical Support:</span>
+                                                <span class="font-semibold text-green-600">TZS 200,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">Security Updates:</span>
+                                                <span class="font-semibold text-green-600">TZS 100,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">System Monitoring:</span>
+                                                <span class="font-semibold text-green-600">TZS 75,000</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                                                <span class="text-gray-700">Bug Fixes & Updates:</span>
+                                                <span class="font-semibold text-green-600">TZS 25,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">VPS Hosting (Premium)</span>
+                                <!-- Total Breakdown -->
+                                <div class="mt-8 bg-white rounded-xl p-6 border-2 border-gray-200">
+                                    <div class="text-center mb-4">
+                                        <h5 class="font-bold text-xl text-gray-800 mb-4">Monthly Investment Breakdown</h5>
                                     </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Domain Registration</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Monthly Maintenance</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">24/7 Priority Support</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Security Updates</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Custom Features (5 hrs/month)</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Mobile App Maintenance</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Performance Optimization</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Backup & Recovery</span>
+                                    
+                                    <div class="grid md:grid-cols-3 gap-6">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-blue-600 mb-2">TZS 300,000</div>
+                                            <div class="text-sm text-gray-600">Infrastructure & Hosting</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-green-600 mb-2">TZS 400,000</div>
+                                            <div class="text-sm text-gray-600">Support & Maintenance</div>
+                                        </div>
+                                        <div class="text-center border-l-2 border-gray-200">
+                                            <div class="text-3xl font-bold text-purple-600 mb-2">TZS 700,000</div>
+                                            <div class="text-sm text-gray-600 font-semibold">Total Monthly</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enterprise Package -->
-                            <div class="bg-white rounded-xl p-6 border-2 border-purple-200 relative">
-                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                    <span class="bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm">ENTERPRISE</span>
-                                </div>
-                                <div class="text-center mt-4 mb-6">
-                                    <div class="text-3xl font-bold text-purple-600 mb-2">TZS 12,000,000</div>
-                                    <div class="text-gray-600">per year</div>
+                            
+                            <!-- Benefits Section -->
+                            <div class="bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-xl p-8">
+                                <h4 class="font-bold text-2xl text-center mb-6">Complete Peace of Mind Package</h4>
+                                
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-shield-alt text-3xl mb-3 text-yellow-300"></i>
+                                        <h5 class="font-semibold mb-2">100% Uptime</h5>
+                                        <p class="text-sm opacity-90">Guaranteed system availability</p>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-headset text-3xl mb-3 text-yellow-300"></i>
+                                        <h5 class="font-semibold mb-2">24/7 Support</h5>
+                                        <p class="text-sm opacity-90">Round-the-clock assistance</p>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-lock text-3xl mb-3 text-yellow-300"></i>
+                                        <h5 class="font-semibold mb-2">Security First</h5>
+                                        <p class="text-sm opacity-90">Regular security updates</p>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-rocket text-3xl mb-3 text-yellow-300"></i>
+                                        <h5 class="font-semibold mb-2">Performance</h5>
+                                        <p class="text-sm opacity-90">Optimized for speed</p>
+                                    </div>
                                 </div>
                                 
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">VPS Hosting (Enterprise)</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Domain Registration</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">24/7 Dedicated Support</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Unlimited Custom Features</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Advanced Analytics</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">White-label Solutions</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check text-green-500 mr-3"></i>
-                                        <span class="text-sm">Multi-tenant Management</span>
-                                    </div>
+                                <div class="mt-8 text-center bg-white bg-opacity-20 rounded-lg p-4">
+                                    <p class="font-bold text-lg mb-2">
+                                        <i class="fas fa-piggy-bank mr-2"></i>
+                                        Pay Annually & Save TZS 400,000!
+                                    </p>
+                                    <p class="text-sm opacity-90">
+                                        Get the same comprehensive support for just TZS 8,000,000 when paid upfront
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -2442,7 +2752,7 @@
                                 <div class="space-y-3">
                                     <div class="flex justify-between border-b border-white border-opacity-20 pb-2">
                                         <span>ERP Development:</span>
-                                        <span class="font-semibold">TZS 15,000,000</span>
+                                        <span class="font-semibold">TZS 20,000,000</span>
                                     </div>
                                     <div class="flex justify-between border-b border-white border-opacity-20 pb-2">
                                         <span>Branding Package:</span>
@@ -2454,67 +2764,96 @@
                                     </div>
                                     <div class="flex justify-between text-xl font-bold pt-3 border-t border-white border-opacity-40">
                                         <span>Total Development:</span>
-                                        <span>TZS 23,000,000</span>
+                                        <span>TZS 28,000,000</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Annual Service Costs -->
                             <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-lg">
-                                <h4 class="font-bold text-xl mb-4 text-center">Annual Service Costs</h4>
+                                <h4 class="font-bold text-xl mb-4 text-center">Annual Support & Maintenance</h4>
                                 <div class="space-y-3">
                                     <div class="flex justify-between border-b border-white border-opacity-20 pb-2">
-                                        <span>Standard Package:</span>
-                                        <span class="font-semibold">TZS 3,600,000/year</span>
+                                        <span>Monthly Payment:</span>
+                                        <span class="font-semibold">TZS 700,000/month</span>
                                     </div>
                                     <div class="flex justify-between border-b border-white border-opacity-20 pb-2">
-                                        <span>Premium Package:</span>
-                                        <span class="font-semibold">TZS 7,200,000/year</span>
+                                        <span>Annual (Monthly):</span>
+                                        <span class="font-semibold">TZS 8,400,000/year</span>
                                     </div>
                                     <div class="flex justify-between border-b border-white border-opacity-20 pb-2">
-                                        <span>Enterprise Package:</span>
-                                        <span class="font-semibold">TZS 12,000,000/year</span>
+                                        <span>Annual (Paid Once):</span>
+                                        <span class="font-semibold text-green-300">TZS 8,000,000/year</span>
                                     </div>
                                     <div class="flex justify-between text-lg font-bold pt-3 border-t border-white border-opacity-40">
                                         <span>Recommended:</span>
-                                        <span class="text-green-300">Premium Package</span>
+                                        <span class="text-green-300">Pay at Once & Save!</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Total Investment Options -->
-                        <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-lg text-center">
-                            <h4 class="font-bold text-2xl mb-6">Total First Year Investment Options</h4>
-                            <div class="grid md:grid-cols-3 gap-4 mb-6">
-                                <div class="bg-white bg-opacity-10 rounded-lg p-4">
-                                    <div class="text-lg font-semibold mb-2">With Standard Package</div>
-                                    <div class="text-2xl font-bold">TZS 26,600,000</div>
-                                    <div class="text-sm opacity-80">Development + 1 Year Standard</div>
-                                </div>
-                                <div class="bg-green-500 bg-opacity-30 rounded-lg p-4 border-2 border-green-300">
-                                    <div class="text-lg font-semibold mb-2">With Premium Package</div>
-                                    <div class="text-2xl font-bold">TZS 30,200,000</div>
-                                    <div class="text-sm opacity-80">Development + 1 Year Premium</div>
-                                    <div class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full mt-2">RECOMMENDED</div>
-                                </div>
-                                <div class="bg-white bg-opacity-10 rounded-lg p-4">
-                                    <div class="text-lg font-semibold mb-2">With Enterprise Package</div>
-                                    <div class="text-2xl font-bold">TZS 35,000,000</div>
-                                    <div class="text-sm opacity-80">Development + 1 Year Enterprise</div>
+                        <!-- Partnership Investment Options -->
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-lg">
+                            <h4 class="font-bold text-2xl text-center mb-6">Complete Partnership Investment Options</h4>
+                            
+                            <!-- Standard Partnership Options -->
+                            <div class="mb-8">
+                                <h5 class="font-bold text-xl text-center mb-4">Standard Partnership (20M Development + 20% Revenue Share)</h5>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-500 bg-opacity-30 rounded-lg p-4 border border-blue-300">
+                                        <div class="text-lg font-semibold mb-2">With Monthly Support</div>
+                                        <div class="text-2xl font-bold mb-1">TZS 28,400,000</div>
+                                        <div class="text-sm opacity-80">20M Development + 8.4M Annual Support</div>
+                                    </div>
+                                    <div class="bg-blue-600 bg-opacity-40 rounded-lg p-4 border border-blue-300">
+                                        <div class="text-lg font-semibold mb-2">With Annual Support</div>
+                                        <div class="text-2xl font-bold mb-1">TZS 28,000,000</div>
+                                        <div class="text-sm opacity-80">20M Development + 8M Annual Support</div>
+                                        <div class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full mt-2 inline-block">SAVE 400K</div>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="bg-gradient-to-r from-green-400 to-blue-400 text-black rounded-lg p-4">
-                                <p class="font-bold text-lg mb-2">
+                            <!-- Premium Partnership Options -->
+                            <div class="mb-6">
+                                <h5 class="font-bold text-xl text-center mb-4 text-green-300">Premium Partnership (30M Development + 15% Revenue Share) - RECOMMENDED</h5>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-green-500 bg-opacity-30 rounded-lg p-4 border-2 border-green-300">
+                                        <div class="text-lg font-semibold mb-2">With Monthly Support</div>
+                                        <div class="text-2xl font-bold mb-1">TZS 38,400,000</div>
+                                        <div class="text-sm opacity-80">30M Development + 8.4M Annual Support</div>
+                                    </div>
+                                    <div class="bg-green-600 bg-opacity-40 rounded-lg p-4 border-4 border-green-300">
+                                        <div class="text-lg font-semibold mb-2">With Annual Support</div>
+                                        <div class="text-2xl font-bold mb-1">TZS 38,000,000</div>
+                                        <div class="text-sm opacity-80">30M Development + 8M Annual Support</div>
+                                        <div class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full mt-2 inline-block">SAVE 400K + BEST MARGINS</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-green-400 to-blue-400 text-black rounded-lg p-6 text-center">
+                                <p class="font-bold text-xl mb-3">
                                     <i class="fas fa-star mr-2"></i>
-                                    Special Launch Offer: Premium Package
+                                    Our Recommendation: Premium Partnership with Annual Support
                                 </p>
-                                <p class="text-lg">
-                                    <strong>Your Investment: TZS 25,000,000</strong>
-                                </p>
-                                <p class="text-sm mt-2">
-                                    Save TZS 5,200,000 + Get Mobile App + Premium Support for 1 Year!
+                                <div class="grid md:grid-cols-3 gap-4 text-lg">
+                                    <div>
+                                        <div class="font-bold text-2xl text-green-700">TZS 38,000,000</div>
+                                        <div class="text-sm">Total First Year Investment</div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-2xl text-purple-700">85%</div>
+                                        <div class="text-sm">Revenue Share for You</div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-2xl text-blue-700">TZS 400,000</div>
+                                        <div class="text-sm">Annual Savings</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm mt-4 font-semibold">
+                                    Best profit margins + annual savings + comprehensive support!
                                 </p>
                             </div>
                         </div>
@@ -2524,7 +2863,7 @@
         </section>
 
         <!-- Value Proposition -->
-        <section class="py-20 gradient-primary text-white relative overflow-hidden">
+        <section id="support" class="py-20 gradient-primary text-white relative overflow-hidden">
             <div class="absolute inset-0 opacity-10">
                 <div class="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
                 <div class="absolute bottom-20 right-16 w-24 h-24 border border-white rounded-full"></div>
@@ -2680,7 +3019,7 @@
                                 <i class="fas fa-exclamation-triangle mr-1"></i> Pay before 22/09/2025
                             </div>
                             <div class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full inline-block">
-                                <i class="fas fa-money-bill mr-1"></i> TZS 3,750,000 (25%)
+                                <i class="fas fa-money-bill mr-1"></i> TZS 5,000,000 (25%)
                             </div>
                         </div>
                         
@@ -2699,7 +3038,7 @@
                                 <i class="fas fa-exclamation-triangle mr-1"></i> Pay before 14/10/2025
                             </div>
                             <div class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full inline-block">
-                                <i class="fas fa-money-bill mr-1"></i> TZS 3,750,000 (25%)
+                                <i class="fas fa-money-bill mr-1"></i> TZS 5,000,000 (25%)
                             </div>
                         </div>
                         
@@ -2718,7 +3057,7 @@
                                 <i class="fas fa-exclamation-triangle mr-1"></i> Pay before 04/11/2025
                             </div>
                             <div class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full inline-block">
-                                <i class="fas fa-money-bill mr-1"></i> TZS 3,750,000 (25%)
+                                <i class="fas fa-money-bill mr-1"></i> TZS 5,000,000 (25%)
                             </div>
                         </div>
                         
@@ -2737,7 +3076,7 @@
                                 <i class="fas fa-exclamation-triangle mr-1"></i> Pay before 25/11/2025
                             </div>
                             <div class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full inline-block">
-                                <i class="fas fa-money-bill mr-1"></i> TZS 3,750,000 (25%)
+                                <i class="fas fa-money-bill mr-1"></i> TZS 5,000,000 (25%)
                             </div>
                         </div>
                     </div>
@@ -3092,57 +3431,19 @@
     </footer>
 
     <script>
-        // Enhanced security and iframe protection for mobile
+        // Simplified error handling for better security
         (function() {
             'use strict';
             
-            // Silent error handling to prevent console spam in mobile iframes
-            const originalConsoleError = console.error;
-            const originalConsoleWarn = console.warn;
-            
-            console.error = function(...args) {
-                const message = args.join(' ');
-                // Filter out known iframe security messages that are normal behavior
-                if (message.includes('Failed to read a named property') || 
-                    message.includes('Blocked a frame with origin') ||
-                    message.includes('Cannot read properties of null')) {
-                    return; // Silently ignore these expected security restrictions
+            // Basic error handling without iframe interference
+            window.addEventListener('error', function(e) {
+                // Only log unexpected errors, ignore common security restrictions
+                if (!e.message.includes('Script error') && 
+                    !e.message.includes('Failed to read') &&
+                    !e.message.includes('Cannot read properties of null')) {
+                    console.error('Application error:', e.message);
                 }
-                originalConsoleError.apply(console, args);
-            };
-            
-            console.warn = function(...args) {
-                const message = args.join(' ');
-                if (message.includes('iframe which has both allow-scripts and allow-same-origin')) {
-                    return; // Silently ignore iframe sandbox warnings
-                }
-                originalConsoleWarn.apply(console, args);
-            };
-            
-            // Robust iframe detection with error handling
-            let isInIframe = false;
-            try {
-                isInIframe = window.top !== window.self;
-            } catch (e) {
-                // If we can't access window.top, we're definitely in a cross-origin iframe
-                isInIframe = true;
-            }
-            
-            // Enhanced dispatchEvent protection
-            if (typeof EventTarget !== 'undefined' && EventTarget.prototype.dispatchEvent) {
-                const originalDispatchEvent = EventTarget.prototype.dispatchEvent;
-                EventTarget.prototype.dispatchEvent = function(event) {
-                    try {
-                        if (!this || this === null) {
-                            return false; // Prevent null reference errors
-                        }
-                        return originalDispatchEvent.call(this, event);
-                    } catch (e) {
-                        // Silently handle dispatch errors in iframe environments
-                        return false;
-                    }
-                };
-            }
+            });
             
             // Safe DOM access helpers
             window.safeQuerySelector = function(selector) {
@@ -3160,20 +3461,6 @@
                     return null;
                 }
             };
-            
-            // Mobile-specific iframe optimizations
-            if (isInIframe && /Mobi|Android/i.test(navigator.userAgent)) {
-                // Disable certain features that cause issues in mobile iframes
-                try {
-                    // Prevent navigation issues
-                    window.addEventListener('beforeunload', function(e) {
-                        e.preventDefault();
-                        return '';
-                    });
-                } catch (e) {
-                    // Silently handle if addEventListener is restricted
-                }
-            }
         })();
         
         // Set current year with safe element access
@@ -3284,13 +3571,13 @@
             
             if (mobileMenuBtn && mobileMenu) {
                 mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.add('active');
+                    mobileMenu.classList.add('open');
                     document.body.style.overflow = 'hidden';
                 });
                 
                 if (closeMobileMenu) {
                     closeMobileMenu.addEventListener('click', () => {
-                        mobileMenu.classList.remove('active');
+                        mobileMenu.classList.remove('open');
                         document.body.style.overflow = 'auto';
                     });
                 }
@@ -3298,7 +3585,7 @@
                 // Close menu when clicking outside
                 document.addEventListener('click', (e) => {
                     if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                        mobileMenu.classList.remove('active');
+                        mobileMenu.classList.remove('open');
                         document.body.style.overflow = 'auto';
                     }
                 });
@@ -3329,17 +3616,18 @@
 
         // Navbar background on scroll
         function initNavbarEffects() {
-            const navbar = document.querySelector('nav');
+            const navbar = document.querySelector('.nav-sticky');
             if (navbar) {
+                // Show navbar immediately
+                navbar.classList.remove('hide');
+                
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 100) {
-                        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                        navbar.style.backdropFilter = 'blur(10px)';
-                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                        navbar.style.background = '#ffffff';
+                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
                     } else {
-                        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-                        navbar.style.backdropFilter = 'blur(5px)';
-                        navbar.style.boxShadow = 'none';
+                        navbar.style.background = '#ffffff';
+                        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
                     }
                 });
             }
@@ -3527,29 +3815,45 @@
         
         // Initialize all animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animations after library loads
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 1000,
-                    easing: 'ease-in-out-cubic',
-                    once: true,
-                    offset: 120,
-                    delay: 100
+            try {
+                // Initialize AOS animations after library loads
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 1000,
+                        easing: 'ease-in-out-cubic',
+                        once: true,
+                        offset: 120,
+                        delay: 100
+                    });
+                }
+                
+                // Safe initialization of all functions
+                const initFunctions = [
+                    animateCounters,
+                    animateProgressBars,
+                    initSmoothScrolling,
+                    initScrollAnimations,
+                    initMobileMenu,
+                    initScrollProgress,
+                    initNavbarEffects,
+                    initCardHoverEffects,
+                    initPricingTabs,
+                    initTabScrolling,
+                    initPricingScrollIndicator
+                ];
+                
+                initFunctions.forEach(func => {
+                    try {
+                        if (typeof func === 'function') {
+                            func();
+                        }
+                    } catch (e) {
+                        console.warn('Function initialization failed:', func.name, e);
+                    }
                 });
+            } catch (e) {
+                console.error('DOM initialization failed:', e);
             }
-            
-            animateCounters();
-            animateProgressBars();
-            initSmoothScrolling();
-            initScrollAnimations();
-            initMobileMenu();
-            initScrollProgress();
-            initNavbarEffects();
-            initCardHoverEffects();
-            initPricingTabs();
-            initTabScrolling();
-            initPricingScrollIndicator();
-            // initTypingAnimation(); // Uncomment for typing effect
         });
         
         // Add parallax effect to hero section
