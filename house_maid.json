@@ -1,0 +1,118 @@
+{
+  "project": "House Maid Connection Platform",
+  "prepared_for": "[Client Name]",
+  "prepared_by": "[Your Name]",
+  "options": {
+    "mobile_app_mvp": {
+      "technology": {
+        "frontend": "Flutter",
+        "backend": "Laravel (API-based)"
+      },
+      "development_fee": 1500000,
+      "features": [
+        "User Registration (Maids & Clients)",
+        "Maid Profiles",
+        "Search & Filters",
+        "WhatsApp/Call Contact",
+        "Basic Admin Panel",
+        "Secure API-based Backend"
+      ],
+      "deployment_costs": {
+        "google_play_store": {
+          "cost": 65000,
+          "frequency": "one_time"
+        },
+        "domain": {
+          "cost": 50000,
+          "frequency": "per_year"
+        },
+        "backend_hosting": {
+          "name": "Managed Cloud Service",
+          "cost": 50000,
+          "frequency": "per_month"
+        }
+      },
+      "maintenance_plans": {
+        "standard": {
+          "cost": 150000,
+          "frequency": "per_month",
+          "includes": [
+            "System Monitoring",
+            "Bug Fixes",
+            "Backup & Security",
+            "Minor Revisions"
+          ]
+        },
+        "growth": {
+          "cost": 200000,
+          "frequency": "per_month",
+          "includes": [
+            "Standard Support",
+            "Feature Tweaks",
+            "Performance Improvements",
+            "Priority Support"
+          ]
+        }
+      }
+    },
+    "web_pwa_version": {
+      "technology": {
+        "frontend": "Web/PWA (Mobile-Friendly)",
+        "backend": "Laravel (API-based)"
+      },
+      "development_fee": 1200000,
+      "features": [
+        "Mobile-Friendly Web App",
+        "User Accounts",
+        "Profiles and Search",
+        "WhatsApp/Call Contact",
+        "Admin Dashboard"
+      ],
+      "deployment_costs": {
+        "domain": {
+          "cost": 50000,
+          "frequency": "per_year"
+        },
+        "hosting": {
+          "name": "Managed Cloud Backend",
+          "cost": 50000,
+          "frequency": "per_month"
+        }
+      },
+      "maintenance": {
+        "cost": 120000,
+        "frequency": "per_month",
+        "includes": [
+          "Monitoring",
+          "Security",
+          "Bug Fixes",
+          "Updates"
+        ]
+      }
+    }
+  },
+  "payment_structure": {
+    "phases": 4,
+    "percentage_per_phase": 25,
+    "payment_timing": "before_each_phase_begins",
+    "example": {
+      "mobile_app": {
+        "development_fee": 1500000,
+        "per_phase_payment": 375000
+      },
+      "web_pwa": {
+        "development_fee": 1200000,
+        "per_phase_payment": 300000
+      }
+    }
+  },
+  "optional_model": {
+    "reduced_upfront_fee": 800000,
+    "payment_modes": [
+      "3000-5000 per active maid/month",
+      "10% commission per booking",
+      "50000 per 50 active users/month"
+    ]
+  },
+  "next_step": "Client to confirm preferred option to initiate Phase 1."
+}

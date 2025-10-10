@@ -1,203 +1,899 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SmartManager ERP Solutions - Choose between SaaS Partnership or Standalone Enterprise solutions for your business">
-    <title>SmartManager ERP Solutions - Business Proposals</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <title>House Maid Connection Platform Proposal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
         }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .gradient-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .proposal-card {
-            transition: all 0.3s ease;
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
         }
-        .proposal-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Options Section */
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        
+        .option-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .option-header {
+            padding: 1.5rem;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .option-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .option-body {
+            padding: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-item {
+            background-color: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .features-list li i {
+            color: var(--secondary);
+            margin-right: 0.5rem;
+        }
+        
+        .deployment-costs {
+            margin-bottom: 1.5rem;
+        }
+        
+        .deployment-costs h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cost-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Payment Structure */
+        .payment-structure {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .phase-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .phase-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .phase-card h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .phase-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Optional Model */
+        .optional-model {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .optional-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .optional-header i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-right: 1rem;
+        }
+        
+        .payment-modes {
+            list-style: none;
+        }
+        
+        .payment-modes li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+        
+        .payment-modes li:last-child {
+            border-bottom: none;
+        }
+        
+        .payment-modes li i {
+            color: var(--secondary);
+            margin-right: 0.8rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .feature-check {
+            color: var(--secondary);
+        }
+        
+        .feature-missing {
+            color: var(--gray);
+            opacity: 0.5;
+        }
+        
+        /* Next Steps */
+        .next-steps {
+            text-align: center;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .next-steps p {
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #cbd5e1;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Header -->
-    <header class="gradient-primary text-white">
-        <div class="container mx-auto px-6 py-20">
-            <div class="text-center">
-                <h1 class="font-poppins text-5xl md:text-6xl font-bold mb-6">
-                    SmartManager ERP Solutions
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                    Comprehensive business management solutions tailored for your success. 
-                    Choose the perfect model for your business needs.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/proposal-v1" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                        <i class="fas fa-handshake mr-2"></i>
-                        SaaS Partnership Model
-                    </a>
-                    <a href="/proposal-v2" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                        <i class="fas fa-building mr-2"></i>
-                        Standalone Enterprise
-                    </a>
-                </div>
-            </div>
+    <header>
+        <div class="container">
+            <div class="logo">Pamoja INC</div>
+            <div class="tagline">Smart Digital Solutions</div>
+            <h1>House Maid Connection Platform</h1>
+            <p>Connecting clients with trusted house maids through a seamless digital platform</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-poppins text-4xl font-bold text-gray-800 mb-4">Choose Your Business Model</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We offer two distinct approaches to help you succeed with our SmartManager ERP solution
-                </p>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Pamoja INC</div>
+            <ul class="nav-links">
+                <li><a href="#overview">Project Overview</a></li>
+                <li><a href="#options">Development Options</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#payment">Payment Structure</a></li>
+                <li><a href="#next">Next Steps</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>House Maid Connection Platform Proposal</h1>
+            <p>A comprehensive digital solution to connect clients with trusted house maids, featuring user registration, profile management, search functionality, and secure communication channels.</p>
+            <a href="#options" class="btn">View Development Options</a>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Project Overview</h2>
+                <p>Connecting households with reliable house maids through a modern digital platform</p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- SaaS Partnership Model -->
-                <div class="proposal-card bg-white rounded-2xl shadow-xl p-8 border border-gray-200 relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-blue-500 text-white font-bold py-2 px-6 rounded-full text-sm">
-                            <i class="fas fa-handshake mr-1"></i>PARTNERSHIP MODEL
-                        </span>
+            
+            <div class="options-container">
+                <div class="option-card">
+                    <div class="option-header" style="background-color: var(--primary);">
+                        <h3>Mobile App MVP</h3>
+                        <p>Native mobile application for iOS and Android</p>
                     </div>
-                    
-                    <div class="text-center mt-8 mb-8">
-                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-users text-3xl text-blue-600"></i>
+                    <div class="option-body">
+                        <div class="price">TZS 1,500,000</div>
+                        <div class="tech-stack">
+                            <div class="tech-item">Flutter</div>
+                            <div class="tech-item">Laravel API</div>
                         </div>
-                        <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">SaaS Partnership</h3>
-                        <p class="text-gray-600 mb-6">
-                            Become our partner and resell SmartManager ERP with attractive revenue sharing
-                        </p>
-                    </div>
-
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Two pricing tiers: 20M/20% or 30M/15%</span>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> User Registration (Maids & Clients)</li>
+                            <li><i class="fas fa-check"></i> Maid Profiles with ratings</li>
+                            <li><i class="fas fa-check"></i> Advanced Search & Filters</li>
+                            <li><i class="fas fa-check"></i> WhatsApp/Call Contact</li>
+                            <li><i class="fas fa-check"></i> Basic Admin Panel</li>
+                            <li><i class="fas fa-check"></i> Secure API-based Backend</li>
+                        </ul>
+                        
+                        <div class="deployment-costs">
+                            <h4>Deployment Costs</h4>
+                            <div class="cost-item">
+                                <span>Google Play Store</span>
+                                <span>TZS 100,000 (one-time)</span>
+                                 
+                            </div>
+                              <div class="cost-item">
+                                <span>App Store</span>
+                                <span>TZS 250,000 (per year)</span>   
+                            </div>
+                            
+                            <div class="cost-item">
+                                <span>Domain</span>
+                                <span>TZS 50,000 (per year)</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Backend Hosting</span>
+                                <span>TZS 50,000 (per month)</span>
+                            </div>
+                          
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Revenue sharing model</span>
+                        
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <a href="#payment" class="btn">Select This Option</a>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Monthly maintenance: 700,000 TZS</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Complete business support</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="bg-blue-50 rounded-lg p-4 mb-6">
-                            <div class="text-2xl font-bold text-blue-600">Up to 85%</div>
-                            <div class="text-sm text-gray-600">Revenue Share</div>
-                        </div>
-                        <a href="/proposal-v1" class="block w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                            View Partnership Proposal
-                        </a>
                     </div>
                 </div>
-
-                <!-- Standalone Enterprise -->
-                <div class="proposal-card bg-white rounded-2xl shadow-xl p-8 border border-gray-200 relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-green-500 text-white font-bold py-2 px-6 rounded-full text-sm">
-                            <i class="fas fa-building mr-1"></i>ENTERPRISE MODEL
-                        </span>
+                
+                <div class="option-card">
+                    <div class="option-header" style="background-color: var(--secondary);">
+                        <h3>Web PWA Version</h3>
+                        <p>Progressive Web App accessible from any device</p>
                     </div>
-                    
-                    <div class="text-center mt-8 mb-8">
-                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-building text-3xl text-green-600"></i>
+                    <div class="option-body">
+                        <div class="price">TZS 1,200,000</div>
+                        <div class="tech-stack">
+                            <div class="tech-item">Web/PWA</div>
+                            <div class="tech-item">Laravel API</div>
                         </div>
-                        <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">Standalone Enterprise</h3>
-                        <p class="text-gray-600 mb-6">
-                            Complete ERP system ownership with full control and customization
-                        </p>
-                    </div>
-
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Fixed price: 15,000,000 TZS</span>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Mobile-Friendly Web App</li>
+                            <li><i class="fas fa-check"></i> User Accounts & Profiles</li>
+                            <li><i class="fas fa-check"></i> Advanced Search Functionality</li>
+                            <li><i class="fas fa-check"></i> WhatsApp/Call Contact</li>
+                            <li><i class="fas fa-check"></i> Admin Dashboard</li>
+                            <li><i class="fas fa-check"></i> Cross-Platform Compatibility</li>
+                        </ul>
+                        
+                        <div class="deployment-costs">
+                            <h4>Deployment Costs</h4>
+                            <div class="cost-item">
+                                <span>Domain</span>
+                                <span>TZS 50,000 (per year)</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Hosting</span>
+                                <span>TZS 50,000 (per month)</span>
+                            </div>
+                               <!-- <div class="cost-item">
+                                <span>Support & Maintenance</span>
+                                <span>TZS 50,000 (per month)</span>
+                            </div> -->
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Complete system ownership</span>
+                        
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <a href="#payment" class="btn" style="background-color: var(--secondary);">Select This Option</a>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Monthly support: 600,000 TZS</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-gray-700">Full source code access</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="bg-green-50 rounded-lg p-4 mb-6">
-                            <div class="text-2xl font-bold text-green-600">15M TZS</div>
-                            <div class="text-sm text-gray-600">One-time Investment</div>
-                        </div>
-                        <a href="/proposal-v2" class="block w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                            View Enterprise Proposal
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Information -->
-            <div class="mt-20 text-center">
-                <div class="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-                    <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-6">Need Help Choosing?</h3>
-                    <p class="text-gray-600 mb-8">
-                        Not sure which model is right for your business? Our team is here to help you make the best decision based on your specific needs and goals.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="mailto:info@smartmanager.co.tz" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors">
-                            <i class="fas fa-envelope mr-2"></i>
-                            Contact Us
-                        </a>
-                        <a href="tel:+255123456789" class="bg-transparent border-2 border-gray-800 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-colors">
-                            <i class="fas fa-phone mr-2"></i>
-                            Call Us
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Pricing Details -->
+    <section id="pricing" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pricing & Maintenance</h2>
+                <p>Complete cost breakdown for development and ongoing support</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option-card">
+                    <div class="option-header" style="background-color: var(--primary);">
+                        <h3>Mobile App Maintenance Plans</h3>
+                        <p>Ongoing support and maintenance options</p>
+                    </div>
+                    <div class="option-body">
+                        <div class="price">Standard: TZS 150,000/month</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> System Monitoring</li>
+                            <li><i class="fas fa-check"></i> Bug Fixes & Updates</li>
+                            <li><i class="fas fa-check"></i> Backup & Security</li>
+                            <li><i class="fas fa-check"></i> Minor Revisions</li>
+                        </ul>
+                        
+                        <div class="price" style="margin-top: 1.5rem;">Growth: TZS 200,000/month</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> All Standard Features</li>
+                            <li><i class="fas fa-check"></i> Feature Tweaks & Improvements</li>
+                            <li><i class="fas fa-check"></i> Performance Optimization</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-header" style="background-color: var(--secondary);">
+                        <h3>Web PWA Maintenance</h3>
+                        <p>Ongoing support for the web application</p>
+                    </div>
+                    <div class="option-body">
+                        <div class="price">TZS 120,000/month</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> System Monitoring</li>
+                            <li><i class="fas fa-check"></i> Security Updates</li>
+                            <li><i class="fas fa-check"></i> Bug Fixes & Patches</li>
+                            <li><i class="fas fa-check"></i> Regular Updates</li>
+                            <li><i class="fas fa-check"></i> Performance Optimization</li>
+                        </ul>
+                        
+                        <div style="margin-top: 1.5rem; padding: 1rem; background-color: var(--light-gray); border-radius: 5px;">
+                            <p><strong>Note:</strong> Maintenance plans are optional but recommended for optimal performance and security.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Structure -->
+    <section id="payment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Payment Structure</h2>
+                <p>Flexible payment options to suit your budget</p>
+            </div>
+            
+            <div class="payment-structure">
+                <h3>Standard Payment Plan</h3>
+                <p>4 equal payments of 25% before each development phase begins</p>
+                
+                <div class="phase-container">
+                    <div class="phase-card">
+                        <h4>Phase 1</h4>
+                        <p>Project initiation & planning</p>
+                        <div class="phase-amount">TZS 375,000</div>
+                        <p>(Mobile App)</p>
+                    </div>
+                    <div class="phase-card">
+                        <h4>Phase 2</h4>
+                        <p>Core development</p>
+                        <div class="phase-amount">TZS 375,000</div>
+                        <p>(Mobile App)</p>
+                    </div>
+                    <div class="phase-card">
+                        <h4>Phase 3</h4>
+                        <p>Feature implementation</p>
+                        <div class="phase-amount">TZS 375,000</div>
+                        <p>(Mobile App)</p>
+                    </div>
+                    <div class="phase-card">
+                        <h4>Phase 4</h4>
+                        <p>Testing & deployment</p>
+                        <div class="phase-amount">TZS 375,000</div>
+                        <p>(Mobile App)</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-gray);">
+                    <div>
+                        <h4>Web PWA Payment Example</h4>
+                        <p>TZS 300,000 per phase (4 phases)</p>
+                    </div>
+                    <div>
+                        <h4>Total Development Cost</h4>
+                        <p>Mobile App: TZS 1,500,000</p>
+                        <p>Web PWA: TZS 1,200,000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="optional-model">
+                <div class="optional-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Alternative Payment Model</h3>
+                        <p>Reduced upfront cost with revenue sharing options</p>
+                    </div>
+                </div>
+                
+                <div class="price" style="color: var(--accent);">Reduced Upfront: TZS 800,000</div>
+                
+                <ul class="payment-modes">
+                    <li><i class="fas fa-user-check"></i> TZS 3,000-5,000 per active maid per month</li>
+                    <li><i class="fas fa-percentage"></i> 10% commission per booking</li>
+                    <li><i class="fas fa-users"></i> TZS 50,000 per 50 active users per month</li>
+                </ul>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background-color: #fffbeb; border-radius: 5px; border-left: 4px solid var(--accent);">
+                    <p><strong>Note:</strong> This model is ideal for clients who prefer lower initial investment and are confident in the platform's revenue potential.</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Feature Comparison</h2>
+                <p>Detailed comparison between Mobile App and Web PWA options</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Mobile App</th>
+                        <th>Web PWA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Development Cost</td>
+                        <td>TZS 1,500,000</td>
+                        <td>TZS 1,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Platform Availability</td>
+                        <td><i class="fas fa-check feature-check"></i> iOS & Android</td>
+                        <td><i class="fas fa-check feature-check"></i> Any device with browser</td>
+                    </tr>
+                    <tr>
+                        <td>User Registration</td>
+                        <td><i class="fas fa-check feature-check"></i> Yes</td>
+                        <td><i class="fas fa-check feature-check"></i> Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Maid Profiles</td>
+                        <td><i class="fas fa-check feature-check"></i> Yes</td>
+                        <td><i class="fas fa-check feature-check"></i> Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Search & Filters</td>
+                        <td><i class="fas fa-check feature-check"></i> Advanced</td>
+                        <td><i class="fas fa-check feature-check"></i> Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Options</td>
+                        <td><i class="fas fa-check feature-check"></i> WhatsApp/Call</td>
+                        <td><i class="fas fa-check feature-check"></i> WhatsApp/Call</td>
+                    </tr>
+                    <tr>
+                        <td>Admin Panel</td>
+                        <td><i class="fas fa-check feature-check"></i> Basic</td>
+                        <td><i class="fas fa-check feature-check"></i> Dashboard</td>
+                    </tr>
+                    <tr>
+                        <td>App Store Deployment</td>
+                        <td><i class="fas fa-check feature-check"></i> Required (TZS 250,000)</td>
+                        <td><i class="fas fa-times feature-missing"></i> Not required</td>
+                    </tr>
+                     <tr>
+                        <td>Google Play Store Deployment</td>
+                        <td><i class="fas fa-check feature-check"></i> Required (TZS 100,000)</td>
+                        <td><i class="fas fa-times feature-missing"></i> Not required</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance Cost</td>
+                        <td>TZS 150,000-200,000/month</td>
+                        <td>TZS 120,000/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section id="next">
+        <div class="container">
+            <div class="next-steps">
+                <h3>Ready to Get Started?</h3>
+                <p>Contact us to discuss your preferred option and begin the development process</p>
+                <a href="mailto:davidkingmushi@gmail.com" class="btn">Contact Us Now</a>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem;">Email: davidkingmushi@gmail.com | Phone: +255744648052</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h4 class="font-poppins text-2xl font-bold mb-4">SmartManager ERP Solutions</h4>
-            <p class="text-gray-400 mb-6">Empowering businesses with intelligent management solutions</p>
-            <div class="flex justify-center space-x-6">
-                <a href="/proposal-v1" class="text-gray-400 hover:text-white transition-colors">SaaS Partnership</a>
-                <a href="/proposal-v2" class="text-gray-400 hover:text-white transition-colors">Enterprise Solution</a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pamoja INC</h3>
+                    <p>Smart Digital Solutions</p>
+                    <p>Transforming businesses through innovative technology solutions</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> davidkingmushi@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +255744648052</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Project Details</h3>
+                    <p>House Maid Connection Platform</p>
+                    <p>Prepared for: Amos Developer</p>
+                    <p>Prepared by: David M. Mushi</p>
+                </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700">
-                <p class="text-gray-400">&copy; 2025 SmartManager ERP Solutions. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pamoja INC. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
